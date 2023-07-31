@@ -1,10 +1,5 @@
-const getListStudentIds = (listStudents) => {
-   let listStudentIds = [];
-   if (!(listStudents instanceof Array)) {
-     return listStudentIds;
-   }
-   listStudentIds = listStudents.map((student) => student.id);
-   return listStudentIds;
- };
+function getStudentsByLocation(students, city) {
+   return students.filter((student) => student.location === city);
+ }
  
- export default getListStudentIds;
+ export default getStudentsByLocation;
