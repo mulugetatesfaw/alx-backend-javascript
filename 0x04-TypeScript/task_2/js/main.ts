@@ -23,3 +23,9 @@ class Teacher implements TeacherInterface {
 }
 
 export const createEmployee = (salary: number | string): Teacher | Director => Number(salary) < 500 ? new Teacher() : new Director();
+export const isDirector = (employee: Teacher | Director): boolean => employee instanceof Director;
+
+export const executeWork = (employee: Teacher | Director): void => {
+  const work = employee instanceof Teacher? employee.workTeacherTasks() : employee.workDirectorTasks();
+  console.log(work)
+}
