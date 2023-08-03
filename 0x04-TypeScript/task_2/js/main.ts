@@ -29,3 +29,9 @@ export const executeWork = (employee: Teacher | Director): void => {
   const work = employee instanceof Teacher? employee.workTeacherTasks() : employee.workDirectorTasks();
   console.log(work)
 }
+
+type Subjects = 'Math' | 'History';
+
+export const teachClass = (todayClass: Subjects) : string => {
+  return todayClass === 'Math' ? 'Teaching Math': 'Teaching History';
+}
